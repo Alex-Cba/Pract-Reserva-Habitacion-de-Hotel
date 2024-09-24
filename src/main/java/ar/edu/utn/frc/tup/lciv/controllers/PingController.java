@@ -1,6 +1,6 @@
-package ar.edu.utn.frc.tup.lc.iv.controllers;
+package ar.edu.utn.frc.tup.lciv.controllers;
 
-import ar.edu.utn.frc.tup.lc.iv.dtos.common.ErrorApi;
+import ar.edu.utn.frc.tup.lciv.dtos.common.ErrorApi;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,7 +15,7 @@ public class PingController {
     @Operation(
             summary = "Check healthy of the app",
             description = "If the app it's alive response pong")
-    @ApiResponses( value = {
+    @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
                     description = "Successful operation",

@@ -1,4 +1,4 @@
-package ar.edu.utn.frc.tup.lc.iv;
+package ar.edu.utn.frc.tup.lciv;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

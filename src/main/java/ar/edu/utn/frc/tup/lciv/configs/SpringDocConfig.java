@@ -1,4 +1,4 @@
-package ar.edu.utn.frc.tup.lc.iv.configs;
+package ar.edu.utn.frc.tup.lciv.configs;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,7 +7,6 @@ import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,15 +14,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringDocConfig {
 
-    @Value("${app.url}") private String url;
-    @Value("${app.dev-name}")private String devName;
-    @Value("${app.dev-email}")private String devEmail;
+    @Value("${app.dev-name}")
+    private String devName;
+    @Value("${app.dev-email}")
+    private String devEmail;
 
     @Bean
-    public OpenAPI openApi (
+    public OpenAPI openApi(
             @Value("${app.name}") String appName,
             @Value("${app.desc}") String appDescription,
-            @Value("${app.version}") String appVersion){
+            @Value("${app.version}") String appVersion) {
 
         Info info = new Info()
                 .title(appName)
@@ -34,14 +34,9 @@ public class SpringDocConfig {
                                 .name(devName)
                                 .email(devEmail));
 
-        Server server = new Server()
-                .url(url)
-                .description(appDescription);
-
         return new OpenAPI()
                 .components(new Components())
-                .info(info)
-                .addServersItem(server);
+                .info(info);
     }
 
     @Bean
