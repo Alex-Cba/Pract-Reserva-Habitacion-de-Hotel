@@ -1,4 +1,4 @@
-package ar.edu.utn.frc.tup.lciv.dtos.common;
+package ar.edu.utn.frc.tup.lciv.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
